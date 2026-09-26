@@ -399,7 +399,7 @@
         0 40px 80px -28px rgba(140, 60, 10, .45),
         0 12px 24px -14px rgba(140, 60, 10, .25),
         inset 0 1px 0 rgba(255, 255, 255, .18);
-      transform-style: preserve-3d;
+      /* transform-style: preserve-3d; REMOVED to fix Safari clicks */
     }
     @media (min-width: 900px) {
       .cta-band {
@@ -441,7 +441,11 @@
       z-index: 0;
     }
 
-    .cta-content { position: relative; z-index: 2; max-width: 40rem; }
+    .cta-content { 
+      position: relative; 
+      z-index: 10; 
+      max-width: 40rem; 
+    }
 
     /* Eyebrow with a lit dot — small detail, big quality signal */
     .cta-eyebrow {
@@ -704,7 +708,7 @@
       padding: 1rem .5rem 2rem;
       scrollbar-width: none;               /* Firefox */
       -ms-overflow-style: none;            /* Edge legacy */
-      transform-style: preserve-3d;
+      /* transform-style: preserve-3d; REMOVED to fix Safari clicks */
       cursor: grab;
       user-select: none;
       -webkit-user-select: none;
@@ -722,7 +726,7 @@
       max-width: 380px;
       scroll-snap-align: center;
       transform-origin: center center;
-      transform-style: preserve-3d;
+      /* transform-style: preserve-3d; REMOVED to fix Safari clicks */
       transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease, opacity .45s ease;
       will-change: transform;
     }
@@ -741,7 +745,7 @@
     /* Side cards fade + tilt slightly. z-index ensures center card is on top for clicks. */
     .projects-track .project-card[data-pos="far-left"]  { transform: translate3d(0,0,-120px) rotateY( 18deg) scale(.88); opacity: .5;  z-index: 1; }
     .projects-track .project-card[data-pos="left"]      { transform: translate3d(0,0, -60px) rotateY( 10deg) scale(.94); opacity: .75; z-index: 2; }
-    .projects-track .project-card[data-pos="center"]    { transform: translate3d(0,0,  20px) rotateY(  0deg) scale(1);    opacity: 1;   z-index: 3; box-shadow: 0 30px 60px -24px rgba(31,26,23,.3); }
+    .projects-track .project-card[data-pos="center"]    { transform: translate3d(0,0,  20px) rotateY(  0deg) scale(1);   opacity: 1;   z-index: 3; box-shadow: 0 30px 60px -24px rgba(31,26,23,.3); }
     .projects-track .project-card[data-pos="right"]     { transform: translate3d(0,0, -60px) rotateY(-10deg) scale(.94); opacity: .75; z-index: 2; }
     .projects-track .project-card[data-pos="far-right"] { transform: translate3d(0,0,-120px) rotateY(-18deg) scale(.88); opacity: .5;  z-index: 1; }
 
@@ -1003,7 +1007,7 @@
       width: auto;
       max-width: 100%;
       object-fit: contain;
-      margin: -50px 0;                 /* absorb PNG padding without inflating the header */
+      margin: -50px 0;                  /* absorb PNG padding without inflating the header */
       flex-shrink: 0;
       transition: filter .3s ease, height .3s cubic-bezier(.2,.8,.2,1), margin .3s cubic-bezier(.2,.8,.2,1);
       filter: drop-shadow(0 3px 14px rgba(0,0,0,.4));
@@ -1395,7 +1399,7 @@
                    data-project-link="https://canva.link/twuqmu81twuk8ia"
                    data-join-link="mailto:orobicyouth@gmail.com?subject=Join%20%22From%20Awareness%20to%20Action%22">
             <a class="project-thumb" href="https://canva.link/twuqmu81twuk8ia" target="_blank" rel="noopener">
-              <img src="assets/From Awareness to Action InfoPack.pdf.jpg" alt="From Awareness to Action" />
+              <img src="assets/1.png" alt="From Awareness to Action" />
               <span class="project-overlay" data-en="View Project →" data-it="Scopri il progetto →">View Project →</span>
             </a>
             <div class="project-body">
@@ -1465,6 +1469,8 @@
             </div>
           </article>
 
+        </div>
+      </div>
       <div class="flex flex-col items-center">
         <div class="carousel-dots" id="carouselDots"></div>
         <span class="swipe-hint" id="swipeHint" data-en="← swipe to explore →" data-it="← scorri per esplorare →">← scorri per esplorare →</span>
@@ -1871,10 +1877,10 @@
 
       if (!isTouch) {
         track.addEventListener('mousedown', (e) => {
+          moved = 0; // IMPORTANT: Must reset to 0 before the return below!
           // Don't hijack mousedown on interactive elements (links, buttons)
           if (e.target.closest('a, button')) return;
           isDown = true;
-          moved = 0;
           startX = e.pageX;
           startScroll = track.scrollLeft;
           track.classList.add('is-dragging');
@@ -1898,6 +1904,7 @@
         // If the user actually dragged, cancel the click that would otherwise fire
         track.addEventListener('click', (e) => {
           if (moved > 8) { e.preventDefault(); e.stopPropagation(); }
+          moved = 0; // IMPORTANT: Reset moved after the click is evaluated
         }, true);
       }
 
