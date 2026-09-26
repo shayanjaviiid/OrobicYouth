@@ -4,17 +4,6 @@
   ============================================================================
   OROBIC YOUTH — Official Website
   ============================================================================
-
-  HOW TO ADD A NEW PROJECT (the part you'll do most often):
-    1. Copy one full <article class="project-card">...</article> block.
-    2. Change the four attributes at the top of the new <article>:
-         a) data-project-link  -> your Canva URL
-         b) data-join-link     -> email/form link
-         c) <img src="...">    -> thumbnail (e.g. assets/yourfile.jpg)
-         d) <h3> and <p>       -> title and description (both data-en AND data-it)
-    The "View Project" and "Join This Project" buttons auto-wire from
-    data-* attributes — no JS changes needed.
-  ============================================================================
 -->
 <head>
   <meta charset="UTF-8" />
@@ -952,19 +941,6 @@
     }
     .footer-eu-caption { align-self: stretch; margin-top: .25rem; }
 
-    /* Team portraits */
-    .team-portrait {
-      width: 100%;
-      aspect-ratio: 4 / 5;           /* portrait-friendly */
-      border-radius: 1.25rem;
-      object-fit: cover;
-      object-position: center top;   /* keep faces in frame */
-      background: var(--orobic-peach);
-    }
-    @media (min-width: 640px) {
-      .team-portrait { aspect-ratio: 1 / 1; }
-    }
-
     /* Decorative divider */
     .divider-dot {
       display: inline-block;
@@ -1200,7 +1176,6 @@
         <a href="#about" class="nav-link" data-en="About" data-it="Chi siamo">About</a>
         <a href="#projects" class="nav-link" data-en="Projects" data-it="Progetti">Projects</a>
         <a href="#impact" class="nav-link" data-en="Impact" data-it="Impatto">Impact</a>
-        <a href="#team" class="nav-link" data-en="Team" data-it="Team">Team</a>
         <a href="#contact" class="nav-link" data-en="Contact" data-it="Contatti">Contact</a>
 
         <div class="lang-switch" role="group" aria-label="Language">
@@ -1232,15 +1207,13 @@
 
   </header>
 
-  <!-- Mobile menu — outside <header> so it's not affected by the header's
-       blur/background stacking context. Positioned fixed, its own layer. -->
+  <!-- Mobile menu -->
   <div id="mobileMenu" class="mobile-menu lg:hidden">
     <nav class="px-5 py-5 flex flex-col gap-3">
       <a href="#home" class="py-2 text-orobic-charcoal font-medium" data-en="Home" data-it="Home">Home</a>
       <a href="#about" class="py-2 text-orobic-charcoal font-medium" data-en="About" data-it="Chi siamo">About</a>
       <a href="#projects" class="py-2 text-orobic-charcoal font-medium" data-en="Projects" data-it="Progetti">Projects</a>
       <a href="#impact" class="py-2 text-orobic-charcoal font-medium" data-en="Impact" data-it="Impatto">Impact</a>
-      <a href="#team" class="py-2 text-orobic-charcoal font-medium" data-en="Team" data-it="Team">Team</a>
       <a href="#contact" class="py-2 text-orobic-charcoal font-medium" data-en="Contact" data-it="Contatti">Contact</a>
       <a href="#join" class="btn btn-primary justify-center mt-2" data-en="Get Involved" data-it="Partecipa">Get Involved</a>
     </nav>
@@ -1336,20 +1309,59 @@
   </section>
 
   <!-- ============================================================
-       ========== PROJECTS CAROUSEL ==========
-       HOW TO ADD A NEW PROJECT:
-       1. Inside .projects-track below, copy one full project-card article
-          (the ones marked FROM AWARENESS, ECO-RESILIENCE, or ROOTS IN MOTION).
-       2. Change four things on the copy:
-            - data-project-link  -> your Canva URL
-            - data-join-link     -> email/form link for joining
-            - <img src="...">    -> thumbnail (e.g. assets/yourfile.jpg)
-            - <h3> and <p>       -> title and description (update BOTH
-              the text AND the matching data-en / data-it attributes)
-       The buttons auto-wire from data-* via JS. The new card is added to
-       the carousel automatically — pagination dots update themselves.
+       PROJECTS (Past/Current)
        ============================================================ -->
   <section id="projects" class="py-16 sm:py-24 lg:py-32 bg-orobic-peach/40">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 sm:mb-14 reveal">
+        <div class="max-w-2xl">
+          <p class="eyebrow" data-en="Our projects" data-it="I nostri progetti">Our projects</p>
+          <h2 class="section-title text-3xl sm:text-4xl md:text-5xl mt-2"
+              data-en="Projects making a difference."
+              data-it="Progetti che fanno la differenza.">
+            Projects making a difference.
+          </h2>
+        </div>
+        <p class="text-orobic-slate md:max-w-sm"
+           data-en="Click the thumbnail to view the full project info pack on Canva."
+           data-it="Clicca sull'anteprima per vedere il progetto completo su Canva.">
+          Click the thumbnail to view the full project info pack on Canva.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- ECO RESILIENCE -->
+        <article class="project-card reveal"
+                 data-project-link="https://canva.link/wz19pb4p0sy9joc"
+                 data-join-link="mailto:orobicyouth@gmail.com?subject=Join%20%22Eco-Resilience%22">
+          <a class="project-thumb" href="https://canva.link/wz19pb4p0sy9joc" target="_blank" rel="noopener">
+            <img src="assets/2.png" alt="Eco-Resilience: The Inner and Outer Landscape" />
+            <span class="project-overlay" data-en="View Project →" data-it="Scopri il progetto →">View Project →</span>
+          </a>
+          <div class="project-body">
+            <span class="project-tag">Erasmus+ · Oct 2026</span>
+            <h3 class="font-display font-bold text-xl leading-snug"
+                data-en="Eco-Resilience: The Inner and Outer Landscape"
+                data-it="Eco-Resilience: The Inner and Outer Landscape">Eco-Resilience: The Inner and Outer Landscape</h3>
+            <p class="text-orobic-slate text-sm leading-relaxed"
+               data-en="Youth Exchange at Lake Iseo connecting your inner landscape with the environmental crisis. Transforming eco-anxiety into active hope through nature-based methods."
+               data-it="Scambio giovanile al Lago d'Iseo che connette il tuo paesaggio interiore con la crisi ambientale. Trasformare l'eco-ansia in speranza attiva attraverso metodi basati sulla natura.">
+              Youth Exchange at Lake Iseo connecting your inner landscape with the environmental crisis. Transforming eco-anxiety into active hope through nature-based methods.
+            </p>
+            <div class="project-actions">
+              <a class="btn btn-primary project-view" href="https://canva.link/wz19pb4p0sy9joc" target="_blank" rel="noopener" data-en="View Project" data-it="Scopri il progetto">View Project</a>
+              <a class="btn btn-secondary project-join" href="mailto:orobicyouth@gmail.com?subject=Join%20%22Eco-Resilience%22" data-en="Join This Project" data-it="Partecipa al progetto">Join This Project</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       UPCOMING PROJECTS CAROUSEL
+       ============================================================ -->
+  <section id="upcoming" class="py-16 sm:py-24 lg:py-32 bg-orobic-cream">
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 sm:mb-14 reveal">
         <div class="max-w-2xl">
@@ -1378,172 +1390,80 @@
         </button>
         <div class="projects-track" id="projectsTrack">
 
-        <!-- ========== FROM AWARENESS TO ACTION ========== -->
-        <article class="project-card reveal"
-                 data-project-link="https://www.canva.com/design/REPLACE-WITH-YOUR-LINK"
-                 data-join-link="mailto:orobicyouth@gmail.com?subject=Join%20%22From%20Awareness%20to%20Action%22">
-          <a class="project-thumb" href="#" target="_blank" rel="noopener">
-            <img src="assets/1.png" alt="From Awareness to Action — Erasmus+ Youth Exchange, Bergamo October 2026" />
-            <span class="project-overlay" data-en="View Project →" data-it="Scopri il progetto →">View Project →</span>
-          </a>
-          <div class="project-body">
-            <span class="project-tag">Erasmus+ · Oct 2026</span>
-            <h3 class="font-display font-bold text-xl leading-snug"
-                data-en="From Awareness to Action"
-                data-it="From Awareness to Action">From Awareness to Action</h3>
-            <p class="text-orobic-slate text-sm leading-relaxed"
-               data-en="Youth Exchange transforming automation anxiety into digital agency. Bergamo, 20–26 October 2026 — with partners from Bulgaria, Romania, Italy, Türkiye and Serbia."
-               data-it="Youth Exchange per trasformare l'ansia da automazione in competenza digitale attiva. Bergamo, 20–26 ottobre 2026 — con partner da Bulgaria, Romania, Italia, Türkiye e Serbia.">
-              Youth Exchange transforming automation anxiety into digital agency.
-              Bergamo, 20–26 October 2026 — with partners from Bulgaria,
-              Romania, Italy, Türkiye and Serbia.
-            </p>
-            <div class="project-actions">
-              <a class="btn btn-primary project-view" href="#" target="_blank" rel="noopener" data-en="View Project" data-it="Scopri il progetto">View Project</a>
-              <a class="btn btn-secondary project-join" href="#" data-en="Join This Project" data-it="Partecipa al progetto">Join This Project</a>
+          <!-- 1. FROM AWARENESS TO ACTION -->
+          <article class="project-card reveal"
+                   data-project-link="https://canva.link/twuqmu81twuk8ia"
+                   data-join-link="mailto:orobicyouth@gmail.com?subject=Join%20%22From%20Awareness%20to%20Action%22">
+            <a class="project-thumb" href="https://canva.link/twuqmu81twuk8ia" target="_blank" rel="noopener">
+              <img src="assets/From Awareness to Action InfoPack.pdf.jpg" alt="From Awareness to Action" />
+              <span class="project-overlay" data-en="View Project →" data-it="Scopri il progetto →">View Project →</span>
+            </a>
+            <div class="project-body">
+              <span class="project-tag">Erasmus+ · Jun 2027</span>
+              <h3 class="font-display font-bold text-xl leading-snug"
+                  data-en="From Awareness to Action"
+                  data-it="From Awareness to Action">From Awareness to Action</h3>
+              <p class="text-orobic-slate text-sm leading-relaxed"
+                 data-en="Youth Exchange exploring Artificial Intelligence, digital well-being, and media literacy. Transform technology from an anxiety-inducing force into something you can actively understand."
+                 data-it="Scambio giovanile sull'Intelligenza Artificiale, benessere digitale e media literacy. Trasforma la tecnologia da fonte d'ansia a strumento da comprendere attivamente.">
+                Youth Exchange exploring Artificial Intelligence, digital well-being, and media literacy. Transform technology from an anxiety-inducing force into something you can actively understand.
+              </p>
+              <div class="project-actions">
+                <a class="btn btn-primary project-view" href="https://canva.link/twuqmu81twuk8ia" target="_blank" rel="noopener" data-en="View Project" data-it="Scopri il progetto">View Project</a>
+                <a class="btn btn-secondary project-join" href="mailto:orobicyouth@gmail.com?subject=Join%20%22From%20Awareness%20to%20Action%22" data-en="Join This Project" data-it="Partecipa al progetto">Join This Project</a>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
 
-        <!-- ========== ECO-RESILIENCE ========== -->
-        <article class="project-card reveal"
-                 data-project-link="https://www.canva.com/design/REPLACE-WITH-YOUR-LINK"
-                 data-join-link="mailto:orobicyouth@gmail.com?subject=Join%20%22Eco-Resilience%22">
-          <a class="project-thumb" href="#" target="_blank" rel="noopener">
-            <img src="assets/2.png" alt="Eco-Resilience: The Inner and Outer Landscape — Lake Iseo, September 2026" />
-            <span class="project-overlay" data-en="View Project →" data-it="Scopri il progetto →">View Project →</span>
-          </a>
-          <div class="project-body">
-            <span class="project-tag">Erasmus+ · Sep 2026</span>
-            <h3 class="font-display font-bold text-xl leading-snug"
-                data-en="Eco-Resilience: The Inner and Outer Landscape"
-                data-it="Eco-Resilience: The Inner and Outer Landscape">Eco-Resilience: The Inner and Outer Landscape</h3>
-            <p class="text-orobic-slate text-sm leading-relaxed"
-               data-en="Youth Exchange on ecological resilience and wellbeing at Lake Iseo (Bergamo), 8–14 September 2026 — with partners from Bulgaria, Romania, Italy, Georgia and Ukraine."
-               data-it="Youth Exchange sulla resilienza ecologica e il benessere al Lago d'Iseo (Bergamo), 8–14 settembre 2026 — con partner da Bulgaria, Romania, Italia, Georgia e Ucraina.">
-              Youth Exchange on ecological resilience and wellbeing at Lake
-              Iseo (Bergamo), 8–14 September 2026 — with partners from
-              Bulgaria, Romania, Italy, Georgia and Ukraine.
-            </p>
-            <div class="project-actions">
-              <a class="btn btn-primary project-view" href="#" target="_blank" rel="noopener" data-en="View Project" data-it="Scopri il progetto">View Project</a>
-              <a class="btn btn-secondary project-join" href="#" data-en="Join This Project" data-it="Partecipa al progetto">Join This Project</a>
+          <!-- 2. THE MASKS WE WEAR -->
+          <article class="project-card reveal"
+                   data-project-link="https://canva.link/63fvykzpoxefvsb"
+                   data-join-link="mailto:orobicyouth@gmail.com?subject=Join%20%22The%20Masks%20We%20Wear%22">
+            <a class="project-thumb" href="https://canva.link/63fvykzpoxefvsb" target="_blank" rel="noopener">
+              <img src="assets/Infopack - The Masks We Wear.pdf.jpg" alt="The Masks We Wear" />
+              <span class="project-overlay" data-en="View Project →" data-it="Scopri il progetto →">View Project →</span>
+            </a>
+            <div class="project-body">
+              <span class="project-tag">Erasmus+ · May 2027</span>
+              <h3 class="font-display font-bold text-xl leading-snug"
+                  data-en="The Masks We Wear"
+                  data-it="The Masks We Wear">The Masks We Wear</h3>
+              <p class="text-orobic-slate text-sm leading-relaxed"
+                 data-en="Youth Exchange on mental health and social media. Take off digital masks by building a real Commedia dell'Arte mask and writing a manifesto for healthier online spaces."
+                 data-it="Scambio giovanile su salute mentale e social media. Togliti le maschere digitali costruendo una vera maschera della Commedia dell'Arte e scrivi un manifesto per spazi online più sani.">
+                Youth Exchange on mental health and social media. Take off digital masks by building a real Commedia dell'Arte mask and writing a manifesto for healthier online spaces.
+              </p>
+              <div class="project-actions">
+                <a class="btn btn-primary project-view" href="https://canva.link/63fvykzpoxefvsb" target="_blank" rel="noopener" data-en="View Project" data-it="Scopri il progetto">View Project</a>
+                <a class="btn btn-secondary project-join" href="mailto:orobicyouth@gmail.com?subject=Join%20%22The%20Masks%20We%20Wear%22" data-en="Join This Project" data-it="Partecipa al progetto">Join This Project</a>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
 
-        <!-- ========== ROOTS IN MOTION ========== -->
-        <article class="project-card reveal"
-                 data-project-link="https://www.canva.com/design/REPLACE-WITH-YOUR-LINK"
-                 data-join-link="mailto:orobicyouth@gmail.com?subject=Join%20%22Roots%20in%20Motion%22">
-          <a class="project-thumb" href="#" target="_blank" rel="noopener">
-            <img src="assets/3.png" alt="Roots in Motion — Erasmus+ Youth Exchange (KA152-YOU), Bergamo October 2026" />
-            <span class="project-overlay" data-en="View Project →" data-it="Scopri il progetto →">View Project →</span>
-          </a>
-          <div class="project-body">
-            <span class="project-tag">Erasmus+ KA152 · Oct 2026</span>
-            <h3 class="font-display font-bold text-xl leading-snug"
-                data-en="Roots in Motion"
-                data-it="Roots in Motion">Roots in Motion</h3>
-            <p class="text-orobic-slate text-sm leading-relaxed"
-               data-en="Erasmus+ Youth Exchange (KA152-YOU) exploring identity, heritage and belonging. Bergamo, 6–12 October 2026."
-               data-it="Youth Exchange Erasmus+ (KA152-YOU) su identità, radici e appartenenza. Bergamo, 6–12 ottobre 2026.">
-              Erasmus+ Youth Exchange (KA152-YOU) exploring identity, heritage
-              and belonging. Bergamo, 6–12 October 2026.
-            </p>
-            <div class="project-actions">
-              <a class="btn btn-primary project-view" href="#" target="_blank" rel="noopener" data-en="View Project" data-it="Scopri il progetto">View Project</a>
-              <a class="btn btn-secondary project-join" href="#" data-en="Join This Project" data-it="Partecipa al progetto">Join This Project</a>
+          <!-- 3. MIGRAPRENEURS -->
+          <article class="project-card reveal"
+                   data-project-link="https://canva.link/pfkbi17qum8zb4z"
+                   data-join-link="mailto:orobicyouth@gmail.com?subject=Join%20%22Migrapreneurs%22">
+            <a class="project-thumb" href="https://canva.link/pfkbi17qum8zb4z" target="_blank" rel="noopener">
+              <img src="assets/Migrapreneurs - InfoPack.jpg" alt="Migrapreneurs" />
+              <span class="project-overlay" data-en="View Project →" data-it="Scopri il progetto →">View Project →</span>
+            </a>
+            <div class="project-body">
+              <span class="project-tag">Erasmus+ · Apr 2027</span>
+              <h3 class="font-display font-bold text-xl leading-snug"
+                  data-en="Migrapreneurs"
+                  data-it="Migrapreneurs">Migrapreneurs</h3>
+              <p class="text-orobic-slate text-sm leading-relaxed"
+                 data-en="Youth Exchange focusing on Migration & Social Entrepreneurship. Turn barriers into social-venture ideas and understand migration from both sides of the journey."
+                 data-it="Scambio giovanile su migrazione e imprenditoria sociale. Trasforma le barriere in idee d'impresa sociale e comprendi la migrazione da entrambi i lati del viaggio.">
+                Youth Exchange focusing on Migration & Social Entrepreneurship. Turn barriers into social-venture ideas and understand migration from both sides of the journey.
+              </p>
+              <div class="project-actions">
+                <a class="btn btn-primary project-view" href="https://canva.link/pfkbi17qum8zb4z" target="_blank" rel="noopener" data-en="View Project" data-it="Scopri il progetto">View Project</a>
+                <a class="btn btn-secondary project-join" href="mailto:orobicyouth@gmail.com?subject=Join%20%22Migrapreneurs%22" data-en="Join This Project" data-it="Partecipa al progetto">Join This Project</a>
+              </div>
             </div>
-          </div>
-        </article>
-
-        <!-- ========== PLACEHOLDER CARD #1 (remove when not needed) ========== -->
-        <article class="project-card reveal"
-                 data-project-link="https://www.canva.com/design/REPLACE-WITH-YOUR-LINK"
-                 data-join-link="mailto:orobicyouth@gmail.com?subject=Join%20Orobic%20Youth%20Project%20%231">
-          <a class="project-thumb" href="#" target="_blank" rel="noopener">
-            <!-- REPLACE: photo — project thumbnail -->
-            <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=900&q=80" alt="Project thumbnail" />
-            <span class="project-overlay" data-en="View Project →" data-it="Scopri il progetto →">View Project →</span>
-          </a>
-          <div class="project-body">
-            <span class="project-tag">Erasmus+ · 2026</span>
-            <h3 class="font-display font-bold text-xl leading-snug"
-                data-en="Youth Exchange: Voices of Europe"
-                data-it="Scambio giovanile: Voci d'Europa">Youth Exchange: Voices of Europe</h3>
-            <p class="text-orobic-slate text-sm leading-relaxed"
-               data-en="A 10-day exchange in Bergamo bringing together young Europeans to explore identity, belonging, and civic engagement through non-formal workshops."
-               data-it="Uno scambio di 10 giorni a Bergamo che riunisce giovani europei per esplorare identità, appartenenza e cittadinanza attiva attraverso workshop di educazione non formale.">
-              A 10-day exchange in Bergamo bringing together young Europeans
-              to explore identity, belonging, and civic engagement through
-              non-formal workshops.
-            </p>
-            <div class="project-actions">
-              <a class="btn btn-primary project-view" href="#" target="_blank" rel="noopener" data-en="View Project" data-it="Scopri il progetto">View Project</a>
-              <a class="btn btn-secondary project-join" href="#" data-en="Join This Project" data-it="Partecipa al progetto">Join This Project</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- ========== PROJECT CARD #2 ========== -->
-        <article class="project-card reveal"
-                 data-project-link="https://www.canva.com/design/REPLACE-WITH-YOUR-LINK"
-                 data-join-link="mailto:orobicyouth@gmail.com?subject=Join%20Orobic%20Youth%20Project%20%232">
-          <a class="project-thumb" href="#" target="_blank" rel="noopener">
-            <!-- REPLACE: photo — project thumbnail -->
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80" alt="Project thumbnail" />
-            <span class="project-overlay" data-en="View Project →" data-it="Scopri il progetto →">View Project →</span>
-          </a>
-          <div class="project-body">
-            <span class="project-tag" data-en="Training course" data-it="Corso di formazione">Training course</span>
-            <h3 class="font-display font-bold text-xl leading-snug"
-                data-en="Leadership Lab for Young Changemakers"
-                data-it="Leadership Lab per giovani changemaker">Leadership Lab for Young Changemakers</h3>
-            <p class="text-orobic-slate text-sm leading-relaxed"
-               data-en="A capacity-building programme for youth workers and student leaders — practical tools for facilitation, project design, and inclusive leadership."
-               data-it="Un programma di capacity building per youth worker e studenti con ruoli di responsabilità: strumenti pratici per la facilitazione, la progettazione e la leadership inclusiva.">
-              A capacity-building programme for youth workers and student
-              leaders — practical tools for facilitation, project design, and
-              inclusive leadership.
-            </p>
-            <div class="project-actions">
-              <a class="btn btn-primary project-view" href="#" target="_blank" rel="noopener" data-en="View Project" data-it="Scopri il progetto">View Project</a>
-              <a class="btn btn-secondary project-join" href="#" data-en="Join This Project" data-it="Partecipa al progetto">Join This Project</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- ========== PROJECT CARD #3 ========== -->
-        <article class="project-card reveal"
-                 data-project-link="https://www.canva.com/design/REPLACE-WITH-YOUR-LINK"
-                 data-join-link="mailto:orobicyouth@gmail.com?subject=Join%20Orobic%20Youth%20Project%20%233">
-          <a class="project-thumb" href="#" target="_blank" rel="noopener">
-            <!-- REPLACE: photo — project thumbnail -->
-            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=900&q=80" alt="Project thumbnail" />
-            <span class="project-overlay" data-en="View Project →" data-it="Scopri il progetto →">View Project →</span>
-          </a>
-          <div class="project-body">
-            <span class="project-tag" data-en="Local initiative" data-it="Iniziativa locale">Local initiative</span>
-            <h3 class="font-display font-bold text-xl leading-snug"
-                data-en="Bergamo Community Action Week"
-                data-it="Settimana di azione comunitaria a Bergamo">Bergamo Community Action Week</h3>
-            <p class="text-orobic-slate text-sm leading-relaxed"
-               data-en="A week of youth-led neighbourhood initiatives — from community gardens to intercultural dinners — designed and delivered by local young people."
-               data-it="Una settimana di iniziative di quartiere guidate dai giovani — dagli orti comunitari alle cene interculturali — pensate e realizzate dai giovani del territorio.">
-              A week of youth-led neighbourhood initiatives — from community
-              gardens to intercultural dinners — designed and delivered by
-              local young people.
-            </p>
-            <div class="project-actions">
-              <a class="btn btn-primary project-view" href="#" target="_blank" rel="noopener" data-en="View Project" data-it="Scopri il progetto">View Project</a>
-              <a class="btn btn-secondary project-join" href="#" data-en="Join This Project" data-it="Partecipa al progetto">Join This Project</a>
-            </div>
-          </div>
-        </article>
-
-        </div>
-      </div>
+          </article>
 
       <div class="flex flex-col items-center">
         <div class="carousel-dots" id="carouselDots"></div>
@@ -1616,54 +1536,6 @@
              data-en="Capacity building, research and advocacy, and conferences that connect youth, experts, and institutions."
              data-it="Capacity building, ricerca e advocacy, conferenze che mettono in dialogo giovani, esperti e istituzioni.">Capacity building, research and advocacy, and conferences that connect youth, experts, and institutions.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       TEAM
-       ============================================================ -->
-  <section id="team" class="py-16 sm:py-24 lg:py-32 bg-orobic-peach/40">
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-      <div class="max-w-2xl mb-10 sm:mb-14 reveal">
-        <p class="eyebrow" data-en="Our team" data-it="Il nostro team">Our team</p>
-        <h2 class="section-title text-3xl sm:text-4xl md:text-5xl mt-2"
-            data-en="The people behind Orobic Youth."
-            data-it="Le persone dietro Orobic Youth.">The people behind Orobic Youth.</h2>
-      </div>
-
-      <div class="grid sm:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 max-w-4xl">
-        <article class="soft-card p-6 reveal">
-          <!-- REPLACE: photo — Shayan portrait -->
-          <img class="team-portrait mb-5" src="assets/IMG_8105.jpg" alt="Shayan Taghizadeh Javid" />
-          <h3 class="font-display font-bold text-2xl">Shayan Javid</h3>
-          <p class="text-orobic-orangeDk font-semibold text-sm mt-1 mb-3 uppercase tracking-wider"
-             data-en="President & Legal Representative"
-             data-it="Presidente & Legale Rappresentante">President & Legal Representative</p>
-          <p class="text-orobic-slate leading-relaxed"
-             data-en="A young professional with extensive experience in youth projects, project coordination, and non-formal education at local and international levels."
-             data-it="Giovane professionista con una solida esperienza in progetti giovanili, coordinamento progettuale ed educazione non formale a livello locale e internazionale.">
-            A young professional with extensive experience in youth projects,
-            project coordination, and non-formal education at local and
-            international levels.
-          </p>
-        </article>
-
-        <article class="soft-card p-6 reveal">
-          <!-- REPLACE: photo — Zinaida portrait -->
-          <img class="team-portrait mb-5" src="assets/455027990_122179379312080254_2398900771870966495_n.jpg" alt="Zinaida Panisko" />
-          <h3 class="font-display font-bold text-2xl">Zinaida Panisko</h3>
-          <p class="text-orobic-orangeDk font-semibold text-sm mt-1 mb-3 uppercase tracking-wider"
-             data-en="Project Coordinator"
-             data-it="Coordinatrice di progetto">Project Coordinator</p>
-          <p class="text-orobic-slate leading-relaxed"
-             data-en="A young professional dedicated to social inclusion and intercultural dialogue, experienced in facilitating creative workshops and supporting international participants."
-             data-it="Giovane professionista dedicata all'inclusione sociale e al dialogo interculturale, con esperienza nella facilitazione di workshop creativi e nel supporto ai partecipanti internazionali.">
-            A young professional dedicated to social inclusion and
-            intercultural dialogue, experienced in facilitating creative
-            workshops and supporting international participants.
-          </p>
-        </article>
       </div>
     </div>
   </section>
@@ -1773,15 +1645,14 @@
 
         <div>
           <h4 class="font-display font-bold text-lg mb-4" data-en="Follow us" data-it="Seguici">Follow us</h4>
-          <!-- REPLACE: socials — update the hrefs below when accounts are live -->
           <div class="flex gap-3">
-            <a href="#" aria-label="Instagram" class="w-11 h-11 rounded-full bg-orobic-cream/10 hover:bg-orobic-orange hover:text-orobic-charcoal flex items-center justify-center transition-colors">
+            <a href="https://www.instagram.com/orobicyouth/" target="_blank" rel="noopener" aria-label="Instagram" class="w-11 h-11 rounded-full bg-orobic-cream/10 hover:bg-orobic-orange hover:text-orobic-charcoal flex items-center justify-center transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.054 1.805.248 2.227.413.56.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.248 1.805-.413 2.227-.217.56-.477.96-.896 1.382-.42.419-.819.679-1.381.896-.422.164-1.057.36-2.227.413-1.266.058-1.645.07-4.85.07-3.204 0-3.584-.012-4.85-.07-1.17-.054-1.805-.248-2.227-.413-.56-.217-.96-.477-1.382-.896-.419-.42-.679-.819-.896-1.381-.164-.422-.36-1.057-.413-2.227-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.054-1.17.248-1.805.413-2.227.217-.56.477-.96.896-1.382.42-.419.819-.679 1.381-.896.422-.164 1.057-.36 2.227-.413C8.416 2.212 8.796 2.2 12 2.2zm0 1.802c-3.148 0-3.522.011-4.767.068-1.05.048-1.622.22-2.002.37-.504.196-.864.43-1.242.808-.378.378-.612.738-.808 1.242-.15.38-.32.952-.37 2.002-.057 1.245-.068 1.619-.068 4.767 0 3.148.011 3.522.068 4.767.048 1.05.22 1.622.37 2.002.196.504.43.864.808 1.242.378.378.738.612 1.242.808.38.15.952.32 2.002.37 1.245.057 1.619.068 4.767.068 3.148 0 3.522-.011 4.767-.068 1.05-.048 1.622-.22 2.002-.37.504-.196.864-.43 1.242-.808.378-.378.612-.738.808-1.242.15-.38.32-.952.37-2.002.057-1.245.068-1.619.068-4.767 0-3.148-.011-3.522-.068-4.767-.048-1.05-.22-1.622-.37-2.002-.196-.504-.43-.864-.808-1.242-.378-.378-.738-.612-1.242-.808-.38-.15-.952-.32-2.002-.37C15.522 4.013 15.148 4.002 12 4.002zm0 3.063a4.933 4.933 0 110 9.866 4.933 4.933 0 010-9.866zm0 8.134a3.2 3.2 0 100-6.4 3.2 3.2 0 000 6.4zm6.406-8.336a1.152 1.152 0 110 2.304 1.152 1.152 0 010-2.304z"/></svg>
             </a>
-            <a href="#" aria-label="Facebook" class="w-11 h-11 rounded-full bg-orobic-cream/10 hover:bg-orobic-orange hover:text-orobic-charcoal flex items-center justify-center transition-colors">
+            <a href="https://www.facebook.com/people/Orobic-Youth/61594571260085/" target="_blank" rel="noopener" aria-label="Facebook" class="w-11 h-11 rounded-full bg-orobic-cream/10 hover:bg-orobic-orange hover:text-orobic-charcoal flex items-center justify-center transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.52 1.5-3.91 3.78-3.91 1.1 0 2.25.2 2.25.2v2.48h-1.27c-1.25 0-1.64.78-1.64 1.58v1.9h2.79l-.45 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94z"/></svg>
             </a>
-            <a href="#" aria-label="YouTube" class="w-11 h-11 rounded-full bg-orobic-cream/10 hover:bg-orobic-orange hover:text-orobic-charcoal flex items-center justify-center transition-colors">
+            <a href="https://www.youtube.com/@OrobicYouth" target="_blank" rel="noopener" aria-label="YouTube" class="w-11 h-11 rounded-full bg-orobic-cream/10 hover:bg-orobic-orange hover:text-orobic-charcoal flex items-center justify-center transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.11-2.13C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.39.57A3 3 0 00.5 6.2 31.4 31.4 0 000 12a31.4 31.4 0 00.5 5.8 3 3 0 002.11 2.13C4.5 20.5 12 20.5 12 20.5s7.5 0 9.39-.57a3 3 0 002.11-2.13A31.4 31.4 0 0024 12a31.4 31.4 0 00-.5-5.8zM9.75 15.57V8.43L15.82 12l-6.07 3.57z"/></svg>
             </a>
           </div>
