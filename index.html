@@ -881,6 +881,23 @@
       justify-content: center;
     }
 
+
+    /* ===== Projects under evaluation (greyed out, no links) ===== */
+    .project-card.project-pending { background: #f1f0ee; box-shadow: 0 10px 30px -22px rgba(31,26,23,.25); }
+    .project-card.project-pending:hover { transform: none; box-shadow: 0 10px 30px -22px rgba(31,26,23,.25); }
+    .project-card.project-pending .project-thumb { cursor: default; background: #e4e2df; }
+    .project-card.project-pending .project-thumb img { filter: grayscale(100%); opacity: .6; }
+    .project-card.project-pending:hover .project-thumb img { transform: none; }
+    .project-card.project-pending h3 { color: #6b6661; }
+    .project-card.project-pending p { color: #8a847e; }
+    .project-card.project-pending .project-tag { color: #6b6661; background: #e4e2df; }
+    .pending-badge {
+      display: inline-flex; align-items: center; justify-content: center; gap: .4rem;
+      width: 100%; padding: .6rem 1.1rem; border-radius: 9999px;
+      border: 1.5px dashed #a8a29c; color: #6b6661; background: transparent;
+      font-size: .9rem; font-weight: 600; cursor: default;
+    }
+    .pending-badge::before { content: "⏳"; }
     /* Reveal animation */
     .reveal {
       opacity: 0;
@@ -1369,19 +1386,18 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 sm:mb-14 reveal">
         <div class="max-w-2xl">
-          <p class="eyebrow" data-en="Upcoming projects" data-it="Prossimi progetti">Upcoming projects</p>
+          <p class="eyebrow" data-en="Under evaluation" data-it="In valutazione">Under evaluation</p>
           <h2 class="section-title text-3xl sm:text-4xl md:text-5xl mt-2"
-              data-en="Our upcoming projects — come be part of them."
-              data-it="I nostri prossimi progetti — vieni a farne parte.">
-            Our upcoming projects —<br class="hidden sm:inline" /> come be part of them.
+              data-en="Our projects"
+              data-it="I nostri progetti">
+            Our projects
           </h2>
         </div>
         <p class="text-orobic-slate md:max-w-sm"
-           data-en="Click any thumbnail to view the full project on Canva. If something sparks your curiosity, use Join This Project and we'll get back to you."
-           data-it="Clicca su un'anteprima per vedere il progetto su Canva. Se qualcosa ti incuriosisce, usa “Partecipa al progetto” e ti ricontatteremo.">
-          Click any thumbnail to view the full project on Canva.
-          If something sparks your curiosity, use <em>Join This Project</em>
-          and we'll get back to you.
+           data-en="These Erasmus+ youth exchanges have been submitted and are waiting for evaluation by the National Agency. Details and calls for participants will be published here if they are approved."
+           data-it="Questi scambi giovanili Erasmus+ sono stati candidati e sono in attesa di valutazione da parte dell'Agenzia Nazionale. Dettagli e bandi per i partecipanti saranno pubblicati qui in caso di approvazione.">
+          These Erasmus+ youth exchanges have been submitted and are waiting for evaluation by the National Agency.
+          Details and calls for participants will be published here if they are approved.
         </p>
       </div>
 
@@ -1395,15 +1411,14 @@
         <div class="projects-track" id="projectsTrack">
 
           <!-- 1. FROM AWARENESS TO ACTION -->
-          <article class="project-card reveal"
-                   data-project-link="https://canva.link/twuqmu81twuk8ia"
-                   data-join-link="mailto:orobicyouth@gmail.com?subject=Join%20%22From%20Awareness%20to%20Action%22">
-            <a class="project-thumb" href="https://canva.link/twuqmu81twuk8ia" target="_blank" rel="noopener">
+          <article class="project-card project-pending reveal">
+            <!-- data-project-link="https://canva.link/twuqmu81twuk8ia" data-join-link="mailto:orobicyouth@gmail.com?subject=Join%20%22From%20Awareness%20to%20Action%22" -->
+            <!-- <a class="project-thumb" href="https://canva.link/twuqmu81twuk8ia" target="_blank" rel="noopener"> -->
+            <div class="project-thumb">
               <img src="assets/From Awareness to Action InfoPack.pdf.jpg" alt="From Awareness to Action" />
-              <span class="project-overlay" data-en="View Project →" data-it="Scopri il progetto →">View Project →</span>
-            </a>
+            </div>
             <div class="project-body">
-              <span class="project-tag">Erasmus+ · Jun 2027</span>
+              <span class="project-tag" data-en="Erasmus+ application submitted · under evaluation" data-it="Candidatura Erasmus+ presentata · in valutazione">Erasmus+ application submitted · under evaluation</span>
               <h3 class="font-display font-bold text-xl leading-snug"
                   data-en="From Awareness to Action"
                   data-it="From Awareness to Action">From Awareness to Action</h3>
@@ -1413,22 +1428,22 @@
                 Youth Exchange exploring Artificial Intelligence, digital well-being, and media literacy. Transform technology from an anxiety-inducing force into something you can actively understand.
               </p>
               <div class="project-actions">
-                <a class="btn btn-primary project-view" href="https://canva.link/twuqmu81twuk8ia" target="_blank" rel="noopener" data-en="View Project" data-it="Scopri il progetto">View Project</a>
-                <a class="btn btn-secondary project-join" href="mailto:orobicyouth@gmail.com?subject=Join%20%22From%20Awareness%20to%20Action%22" data-en="Join This Project" data-it="Partecipa al progetto">Join This Project</a>
+                <!-- <a class="btn btn-primary project-view" href="https://canva.link/twuqmu81twuk8ia" target="_blank" rel="noopener" data-en="View Project" data-it="Scopri il progetto">View Project</a> -->
+                <!-- <a class="btn btn-secondary project-join" href="mailto:orobicyouth@gmail.com?subject=Join%20%22From%20Awareness%20to%20Action%22" data-en="Join This Project" data-it="Partecipa al progetto">Join This Project</a> -->
+                <span class="pending-badge" data-en="Waiting for evaluation" data-it="In attesa di valutazione">Waiting for evaluation</span>
               </div>
             </div>
           </article>
 
           <!-- 2. THE MASKS WE WEAR -->
-          <article class="project-card reveal"
-                   data-project-link="https://canva.link/63fvykzpoxefvsb"
-                   data-join-link="mailto:orobicyouth@gmail.com?subject=Join%20%22The%20Masks%20We%20Wear%22">
-            <a class="project-thumb" href="https://canva.link/63fvykzpoxefvsb" target="_blank" rel="noopener">
+          <article class="project-card project-pending reveal">
+            <!-- data-project-link="https://canva.link/63fvykzpoxefvsb" data-join-link="mailto:orobicyouth@gmail.com?subject=Join%20%22The%20Masks%20We%20Wear%22" -->
+            <!-- <a class="project-thumb" href="https://canva.link/63fvykzpoxefvsb" target="_blank" rel="noopener"> -->
+            <div class="project-thumb">
               <img src="assets/Infopack - The Masks We Wear.pdf.jpg" alt="The Masks We Wear" />
-              <span class="project-overlay" data-en="View Project →" data-it="Scopri il progetto →">View Project →</span>
-            </a>
+            </div>
             <div class="project-body">
-              <span class="project-tag">Erasmus+ · May 2027</span>
+              <span class="project-tag" data-en="Erasmus+ application submitted · under evaluation" data-it="Candidatura Erasmus+ presentata · in valutazione">Erasmus+ application submitted · under evaluation</span>
               <h3 class="font-display font-bold text-xl leading-snug"
                   data-en="The Masks We Wear"
                   data-it="The Masks We Wear">The Masks We Wear</h3>
@@ -1438,22 +1453,22 @@
                 Youth Exchange on mental health and social media. Take off digital masks by building a real Commedia dell'Arte mask and writing a manifesto for healthier online spaces.
               </p>
               <div class="project-actions">
-                <a class="btn btn-primary project-view" href="https://canva.link/63fvykzpoxefvsb" target="_blank" rel="noopener" data-en="View Project" data-it="Scopri il progetto">View Project</a>
-                <a class="btn btn-secondary project-join" href="mailto:orobicyouth@gmail.com?subject=Join%20%22The%20Masks%20We%20Wear%22" data-en="Join This Project" data-it="Partecipa al progetto">Join This Project</a>
+                <!-- <a class="btn btn-primary project-view" href="https://canva.link/63fvykzpoxefvsb" target="_blank" rel="noopener" data-en="View Project" data-it="Scopri il progetto">View Project</a> -->
+                <!-- <a class="btn btn-secondary project-join" href="mailto:orobicyouth@gmail.com?subject=Join%20%22The%20Masks%20We%20Wear%22" data-en="Join This Project" data-it="Partecipa al progetto">Join This Project</a> -->
+                <span class="pending-badge" data-en="Waiting for evaluation" data-it="In attesa di valutazione">Waiting for evaluation</span>
               </div>
             </div>
           </article>
 
           <!-- 3. MIGRAPRENEURS -->
-          <article class="project-card reveal"
-                   data-project-link="https://canva.link/pfkbi17qum8zb4z"
-                   data-join-link="mailto:orobicyouth@gmail.com?subject=Join%20%22Migrapreneurs%22">
-            <a class="project-thumb" href="https://canva.link/pfkbi17qum8zb4z" target="_blank" rel="noopener">
+          <article class="project-card project-pending reveal">
+            <!-- data-project-link="https://canva.link/pfkbi17qum8zb4z" data-join-link="mailto:orobicyouth@gmail.com?subject=Join%20%22Migrapreneurs%22" -->
+            <!-- <a class="project-thumb" href="https://canva.link/pfkbi17qum8zb4z" target="_blank" rel="noopener"> -->
+            <div class="project-thumb">
               <img src="assets/Migrapreneurs - InfoPack.jpg" alt="Migrapreneurs" />
-              <span class="project-overlay" data-en="View Project →" data-it="Scopri il progetto →">View Project →</span>
-            </a>
+            </div>
             <div class="project-body">
-              <span class="project-tag">Erasmus+ · Apr 2027</span>
+              <span class="project-tag" data-en="Erasmus+ application submitted · under evaluation" data-it="Candidatura Erasmus+ presentata · in valutazione">Erasmus+ application submitted · under evaluation</span>
               <h3 class="font-display font-bold text-xl leading-snug"
                   data-en="Migrapreneurs"
                   data-it="Migrapreneurs">Migrapreneurs</h3>
@@ -1463,8 +1478,9 @@
                 Youth Exchange focusing on Migration & Social Entrepreneurship. Turn barriers into social-venture ideas and understand migration from both sides of the journey.
               </p>
               <div class="project-actions">
-                <a class="btn btn-primary project-view" href="https://canva.link/pfkbi17qum8zb4z" target="_blank" rel="noopener" data-en="View Project" data-it="Scopri il progetto">View Project</a>
-                <a class="btn btn-secondary project-join" href="mailto:orobicyouth@gmail.com?subject=Join%20%22Migrapreneurs%22" data-en="Join This Project" data-it="Partecipa al progetto">Join This Project</a>
+                <!-- <a class="btn btn-primary project-view" href="https://canva.link/pfkbi17qum8zb4z" target="_blank" rel="noopener" data-en="View Project" data-it="Scopri il progetto">View Project</a> -->
+                <!-- <a class="btn btn-secondary project-join" href="mailto:orobicyouth@gmail.com?subject=Join%20%22Migrapreneurs%22" data-en="Join This Project" data-it="Partecipa al progetto">Join This Project</a> -->
+                <span class="pending-badge" data-en="Waiting for evaluation" data-it="In attesa di valutazione">Waiting for evaluation</span>
               </div>
             </div>
           </article>
